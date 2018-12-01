@@ -87,9 +87,12 @@ class ViewController: UIViewController {
             recognitionRequest?.endAudio()
             startStopBtn.isEnabled = false
             startStopBtn.setTitle("Start Recording", for: .normal)
+            checkBtnPressed()
+            
         } else {
             startRecording()
             startStopBtn.setTitle("Stop Recording", for: .normal)
+            
         }
     }
     
@@ -167,9 +170,13 @@ class ViewController: UIViewController {
     
     //text to speech
     @IBAction func checkBtn(_ sender: Any) {
+        checkBtnPressed()
+    }
+    
+    func checkBtnPressed(){
         let spellWord = allWords.list[questionNumber].spellWord
         
-        if spellWord == answerTxt.text {
+        if spellWord == answerTxt.text?.lowercased() {
             //congratulate
             randomPositiveFeedback()
             
@@ -224,7 +231,7 @@ class ViewController: UIViewController {
     }
     
     func nextWord(){
-        
+        answerTxt.text = ""
         //if there are 14 questions, the number below should be 13 (always one less)
         if questionNumber <= 13 {
             //wordLabel.text = allWords.list[questionNumber].spellWord
@@ -272,7 +279,7 @@ class ViewController: UIViewController {
     }
     
     func showWord(){
-        showWordLbl.text = allWords.list[questionNumber].spellWord
+        showWordLbl.text = allWords.list[questionNumber].spellWord.uppercased()
     }
     
     func updateProgress(){
