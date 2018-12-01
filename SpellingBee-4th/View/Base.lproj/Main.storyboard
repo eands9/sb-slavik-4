@@ -75,6 +75,18 @@
                                     <action selector="nextSpellWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGy-OC-hdb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gs-fX-bFV">
+                                <rect key="frame" x="268" y="149" width="234" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.11530262989999999" alpha="0.98327803940000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bWN-G9-GND"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -84,6 +96,7 @@
                         <outlet property="checkAnsBtn" destination="CUt-V0-vM4" id="bnZ-Om-ZJf"/>
                         <outlet property="progressLbl" destination="hkb-wg-u1k" id="daE-QT-Gks"/>
                         <outlet property="showWordLbl" destination="WbW-Uh-hJs" id="7Wx-la-IOz"/>
+                        <outlet property="startStopBtn" destination="2Gs-fX-bFV" id="8rQ-dw-xQa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
