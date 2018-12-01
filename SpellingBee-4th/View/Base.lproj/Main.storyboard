@@ -66,12 +66,22 @@
                                     <action selector="showWordBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="265-XH-CJ1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvV-zX-tuJ">
+                                <rect key="frame" x="324" y="800" width="122" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Next Word"/>
+                                <connections>
+                                    <action selector="nextSpellWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGy-OC-hdb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="answerTxt" destination="3dY-qP-HWD" id="olu-Bm-tSF"/>
+                        <outlet property="checkAnsBtn" destination="CUt-V0-vM4" id="bnZ-Om-ZJf"/>
                         <outlet property="progressLbl" destination="hkb-wg-u1k" id="daE-QT-Gks"/>
                         <outlet property="showWordLbl" destination="WbW-Uh-hJs" id="7Wx-la-IOz"/>
                     </connections>

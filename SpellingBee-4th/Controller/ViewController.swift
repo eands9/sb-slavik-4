@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var answerTxt: UITextField!
     @IBOutlet weak var progressLbl: UILabel!
     @IBOutlet weak var showWordLbl: UILabel!
+    @IBOutlet weak var checkAnsBtn: UIButton!
     
     var questionNumber: Int = 0
     var randomPick: Int = 0
@@ -68,9 +69,16 @@ class ViewController: UIViewController {
     
     @IBAction func showWordBtn(_ sender: Any) {
         showWord()
-        
+        checkAnsBtn.isEnabled = false
+        numberAttempts += 1
+        updateProgress()
     }
     
+    @IBAction func nextSpellWord(_ sender: Any) {
+        checkAnsBtn.isEnabled = true
+        questionNumber += 1
+        nextWord()
+    }
     
     func readMe( myText: String) {
         let utterance = AVSpeechUtterance(string: myText )
