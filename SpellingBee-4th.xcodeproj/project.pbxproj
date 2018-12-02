@@ -315,7 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W486C2LXU7;
+				DEVELOPMENT_TEAM = MG5GX9U8M5;
 				INFOPLIST_FILE = "SpellingBee-4th/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W486C2LXU7;
+				DEVELOPMENT_TEAM = MG5GX9U8M5;
 				INFOPLIST_FILE = "SpellingBee-4th/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
