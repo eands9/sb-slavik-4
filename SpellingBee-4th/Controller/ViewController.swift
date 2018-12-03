@@ -237,7 +237,7 @@ class ViewController: UIViewController {
     func nextWord(){
         answerTxt.text = ""
         //if there are 14 questions, the number below should be 13 (always one less)
-        if questionNumber <= 13 {
+        if questionNumber <= totalNumberOfQuestions - 1 {
             //wordLabel.text = allWords.list[questionNumber].spellWord
             readMe(myText: "Spoull" + allWords.list[questionNumber].spellWord)
             answerTxt.text = ""
