@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     //text to speech
     @IBOutlet weak var answerTxt: UITextField!
     @IBOutlet weak var progressLbl: UILabel!
-    @IBOutlet weak var showWordLbl: UILabel!
     @IBOutlet weak var checkAnsBtn: UIButton!
     
     var questionNumber: Int = 0
     var randomPick: Int = 0
     var correctAnswers: Int = 0
     var numberAttempts: Int = 0
+    var totalNumberOfQuestions: Int = 0
     
     let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome"]
     let retryArray = ["Try again","Oooops"]
@@ -75,7 +75,11 @@ class ViewController: UIViewController {
             }
         }
         
-        
+        // Get a count of number of questions
+        let numberOfQuestions = allWords.list
+        // Get the size of the array
+        totalNumberOfQuestions = numberOfQuestions.count
+        print(totalNumberOfQuestions)
         
     }
     //speech to text
@@ -236,7 +240,7 @@ class ViewController: UIViewController {
         if questionNumber <= 13 {
             //wordLabel.text = allWords.list[questionNumber].spellWord
             readMe(myText: "Spoull" + allWords.list[questionNumber].spellWord)
-            showWordLbl.text = ""
+            answerTxt.text = ""
         }
         else {
             
@@ -279,7 +283,7 @@ class ViewController: UIViewController {
     }
     
     func showWord(){
-        showWordLbl.text = allWords.list[questionNumber].spellWord.uppercased()
+        answerTxt.text = allWords.list[questionNumber].spellWord.uppercased()
     }
     
     func updateProgress(){
