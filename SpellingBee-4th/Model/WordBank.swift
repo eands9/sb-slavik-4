@@ -15,6 +15,7 @@ class WordBank{
         list.append(Word(word:"irked", sentence:" Drivers were irked by the higher gasoline prices"))
         list.append(Word(word:"prickliness", sentence:"The prickliness of the weeds makes it harder to pick."))
         list.append(Word(word:"narration", sentence:"The narration of the folk tale made it more interesting."))
+        /*
         list.append(Word(word:"dormer", sentence:"As there is no dormer on the roof, the ceilings slant downward on each side."))
         list.append(Word(word:"supposedly", sentence:"Anne is coming for a visit in March supposedly"))
         list.append(Word(word:"ruefully", sentence:"The little boys ruefully apologized for breaking the window."))
@@ -50,6 +51,7 @@ class WordBank{
         list.append(Word(word:"diabolical", sentence:" Ethan's smile returned, and it was hideously diabolic"))
         list.append(Word(word:"buzzard", sentence:"The turkey-buzzard and the barn-owl are resident"))
         list.append(Word(word:"martyr", sentence:" Killing him would only make him a martyr"))
+    */
     }
     
     
