@@ -86,15 +86,15 @@ class ViewController: UIViewController {
                 self.startStopBtn.isEnabled = isButtonEnabled
             }
         }
-        
+        */
         // Get a count of number of questions
         let numberOfQuestions = allWords.list
         // Get the size of the array
         totalNumberOfQuestions = numberOfQuestions.count
         
         self.answerTxt.becomeFirstResponder()
-        */
     }
+    /* Disable Audio
     //speech to text
     @IBAction func startStopAct(_ sender: Any) {
         speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: lang))
@@ -184,6 +184,7 @@ class ViewController: UIViewController {
             startStopBtn.isEnabled = false
         }
     }
+*/
     
     //text to speech
     @IBAction func checkBtn(_ sender: Any) {
@@ -213,13 +214,11 @@ class ViewController: UIViewController {
             
             //clear texview
             answerTxt.text = ""
-            
-            
+        
             //increment number of correct answers
             correctAnswers += 1
             numberAttempts += 1
             updateProgress()
-            
             
         }
         else {
