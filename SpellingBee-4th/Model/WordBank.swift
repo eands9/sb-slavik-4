@@ -13,10 +13,6 @@ class WordBank{
     
     init(){
         
-        list.append(Word(word:"a", sentence:"Garbanzo beans are healty for you"))
-        list.append(Word(word:"b", sentence:"The most popular member of this clique is William B."))
-        list.append(Word(word:"c", sentence:"There is no antagonism between the divisions of the coloured race"))
-        /*
         list.append(Word(word:"garbanzo", sentence:"Garbanzo beans are healty for you"))
         list.append(Word(word:"cliques", sentence:"The most popular member of this clique is William B."))
         list.append(Word(word:"antagonism", sentence:"There is no antagonism between the divisions of the coloured race"))
@@ -57,7 +53,6 @@ class WordBank{
         list.append(Word(word:"reprimand", sentence:"His boss gave him a reprimand for being late"))
         list.append(Word(word:"eclair", sentence:"A pastry lover's heaven-bite-sized classics: Royal Chocolate Tart, Eclair, White Chocolate Puff and Black Forest Tart."))
  
-        */
     }
     
     

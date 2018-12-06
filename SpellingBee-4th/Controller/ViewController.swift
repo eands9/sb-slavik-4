@@ -291,7 +291,6 @@ class ViewController: UIViewController {
             //wordLabel.text = allWords.list[questionNumber].spellWord
             readMe(myText: "Spoull" + allWords.list[questionNumber].spellWord)
             answerTxt.text = ""
-
         }
         else if markedQuestionsCount == 0 {
             checkAnsBtn .isEnabled = false
@@ -299,16 +298,12 @@ class ViewController: UIViewController {
             
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
                 self.startOver()
-                
             })
             
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
-            
         }
         else {
-            
-            
             isTesting = false
             readMe(myText: "Let us review")
             
@@ -320,12 +315,12 @@ class ViewController: UIViewController {
                 self.answerTxt.text = ""
                 self.answerTxt.textColor = (UIColor.red)
             }
-
         }
+        
+        checkAnsBtn.isEnabled = true
     }
     
     func nextWordIsReview(){
-        
         questionNumber += 1
         answerTxt.text = ""
         //checkAnsBtn .isEnabled = true
@@ -343,13 +338,13 @@ class ViewController: UIViewController {
             
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
                 self.startOver()
-                
             })
             
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
-            
         }
+        
+        checkAnsBtn.isEnabled = true
     }
     
     @IBAction func sentenceBtn(_ sender: Any) {
@@ -371,7 +366,7 @@ class ViewController: UIViewController {
     func readMe( myText: String) {
         let utterance = AVSpeechUtterance(string: myText )
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        utterance.rate = 0.3
+        utterance.rate = 0.4
         
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
@@ -397,6 +392,7 @@ class ViewController: UIViewController {
     
     func randomPositiveFeedback(){
         randomPick = Int(arc4random_uniform(8))
+        checkAnsBtn.isEnabled = false
         readMe(myText: congratulateArray[randomPick])
         
     }
