@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     var markedQuestions = [Word]()
     
     var IsCorrect: Bool = true
+    var isStartOver: Bool = false
     
     let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome"]
     let retryArray = ["Try again","Oooops"]
@@ -229,11 +230,10 @@ class ViewController: UIViewController {
         let trackedSentence = allWords.list[questionNumber].fullSentence
         let trackedWord = allWords.list[questionNumber].spellWord
         
-        
         markedQuestions.append(Word(word: trackedWord, sentence: trackedSentence))
         markedQuestionsCount += 1
         
-        
+
     }
     func checkBtnIsReview(){
         let correctAnswer = markedQuestions[questionNumber].spellWord
@@ -242,6 +242,7 @@ class ViewController: UIViewController {
             //congratulate
             randomPositiveFeedback()
             
+            //questionNumber += 1
             //next Question
             nextWordIsReview()
             /*
@@ -268,19 +269,28 @@ class ViewController: UIViewController {
     }
     
     func nextWordIsTesting(){
-        questionNumber += 1
+
+        if IsCorrect == false{
+            trackMarkedQuestions()
+            IsCorrect = true
+        }
+        
         answerTxt.text = ""
+        
+        if isStartOver == true {
+            questionNumber = 0
+            isStartOver = false
+        }
+        else {
+            questionNumber += 1
+        }
+        
+        
         //if there are 14 questions, the number below should be 13 (always one less)
         if questionNumber <= totalNumberOfQuestions - 1 {
             //wordLabel.text = allWords.list[questionNumber].spellWord
             readMe(myText: "Spoull" + allWords.list[questionNumber].spellWord)
             answerTxt.text = ""
-            
-
-            if IsCorrect == false{
-                trackMarkedQuestions()
-                IsCorrect = true
-            }
 
         }
         else if markedQuestionsCount == 0 {
@@ -311,7 +321,6 @@ class ViewController: UIViewController {
                 self.answerTxt.textColor = (UIColor.red)
             }
 
- 
         }
     }
     
@@ -322,8 +331,11 @@ class ViewController: UIViewController {
         //checkAnsBtn .isEnabled = true
         
         if questionNumber <= markedQuestionsCount - 1  {
-            readMe(myText: "Spoull" + markedQuestions[questionNumber].spellWord)
-            answerTxt.text = ""
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when){
+                self.readMe(myText: "Spoull" + self.markedQuestions[self.questionNumber].spellWord)
+            self.answerTxt.text = ""
+            }
         }
         else {
             //chkAnsBtn .isEnabled = false
@@ -371,7 +383,16 @@ class ViewController: UIViewController {
         questionNumber = 0
         correctAnswers = 0
         numberAttempts = 0
+
+        markedQuestionsCount = 0
+        markedQuestions = [Word]()
+        
+        isTesting = true
+        isStartOver = true
+        answerTxt.textColor = (UIColor.black)
         nextWordIsTesting()
+        
+        
     }
     
     func randomPositiveFeedback(){
