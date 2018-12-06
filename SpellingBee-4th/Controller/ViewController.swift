@@ -53,6 +53,10 @@ class ViewController: UIViewController {
         let firstWord = allWords.list[0].spellWord
         readMe(myText: "Spell \(firstWord).")
         
+        //Keep Recording Disabled for now
+        startStopBtn.isEnabled = false
+        
+        /*
         //speech to text
         startStopBtn.isEnabled = false  //2
         speechRecognizer?.delegate = self as? SFSpeechRecognizerDelegate  //3
@@ -89,6 +93,7 @@ class ViewController: UIViewController {
         totalNumberOfQuestions = numberOfQuestions.count
         
         self.answerTxt.becomeFirstResponder()
+        */
     }
     //speech to text
     @IBAction func startStopAct(_ sender: Any) {
