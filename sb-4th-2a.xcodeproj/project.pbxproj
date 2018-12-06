@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		6D3EBDFB21B23ED600B7572C /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		6D3EBDFD21B23F0300B7572C /* WordBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBank.swift; sourceTree = "<group>"; };
-		6D3EE82C21B1D1A6009AFEA5 /* sb-4th-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sb-4th-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3EE82C21B1D1A6009AFEA5 /* sb-4th-2a.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sb-4th-2a.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D3EE82F21B1D1A6009AFEA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D3EE83121B1D1A6009AFEA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D3EE83421B1D1A6009AFEA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		6D3EE82D21B1D1A6009AFEA5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D3EE82C21B1D1A6009AFEA5 /* sb-4th-3.app */,
+				6D3EE82C21B1D1A6009AFEA5 /* sb-4th-2a.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,9 +97,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D3EE82B21B1D1A6009AFEA5 /* sb-4th-3 */ = {
+		6D3EE82B21B1D1A6009AFEA5 /* sb-4th-2a */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D3EE83E21B1D1A7009AFEA5 /* Build configuration list for PBXNativeTarget "sb-4th-3" */;
+			buildConfigurationList = 6D3EE83E21B1D1A7009AFEA5 /* Build configuration list for PBXNativeTarget "sb-4th-2a" */;
 			buildPhases = (
 				6D3EE82821B1D1A6009AFEA5 /* Sources */,
 				6D3EE82921B1D1A6009AFEA5 /* Frameworks */,
@@ -109,9 +109,9 @@
 			);
 			dependencies = (
 			);
-			name = "sb-4th-3";
+			name = "sb-4th-2a";
 			productName = "SpellingBee-4th";
-			productReference = 6D3EE82C21B1D1A6009AFEA5 /* sb-4th-3.app */;
+			productReference = 6D3EE82C21B1D1A6009AFEA5 /* sb-4th-2a.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -129,7 +129,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D3EE82721B1D1A6009AFEA5 /* Build configuration list for PBXProject "sb-4th-3" */;
+			buildConfigurationList = 6D3EE82721B1D1A6009AFEA5 /* Build configuration list for PBXProject "sb-4th-2a" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D3EE82B21B1D1A6009AFEA5 /* sb-4th-3 */,
+				6D3EE82B21B1D1A6009AFEA5 /* sb-4th-2a */,
 			);
 		};
 /* End PBXProject section */
@@ -321,7 +321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eands9.sb-4th-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eands9.sb-4th-2a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,7 +339,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eands9.sb-4th-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eands9.sb-4th-2a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -349,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D3EE82721B1D1A6009AFEA5 /* Build configuration list for PBXProject "sb-4th-3" */ = {
+		6D3EE82721B1D1A6009AFEA5 /* Build configuration list for PBXProject "sb-4th-2a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D3EE83C21B1D1A7009AFEA5 /* Debug */,
@@ -358,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D3EE83E21B1D1A7009AFEA5 /* Build configuration list for PBXNativeTarget "sb-4th-3" */ = {
+		6D3EE83E21B1D1A7009AFEA5 /* Build configuration list for PBXNativeTarget "sb-4th-2a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D3EE83F21B1D1A7009AFEA5 /* Debug */,
