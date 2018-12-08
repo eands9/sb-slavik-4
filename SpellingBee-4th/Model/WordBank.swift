@@ -12,15 +12,14 @@ class WordBank{
     var list = [Word]()
     
     init(){
-        list.append(Word(word:"prevaricate", sentence:""))
-        list.append(Word(word:"acclamations", sentence:""))
-        list.append(Word(word:"harlequin", sentence:""))
-        list.append(Word(word:"fascist", sentence:""))
-        list.append(Word(word:"savanna", sentence:""))
-        list.append(Word(word:"balaclavas", sentence:""))
-        list.append(Word(word:"courteous", sentence:""))
-        list.append(Word(word:"aphorism", sentence:""))
-        list.append(Word(word:"diffidence", sentence:""))
-        list.append(Word(word:"cinnabar", sentence:""))
+        list.append(Word(word:"eviscerated", sentence:""))
+        list.append(Word(word:"unguents", sentence:""))
+        list.append(Word(word:"concertina", sentence:""))
+        list.append(Word(word:"electrolysis", sentence:""))
+        list.append(Word(word:"asseveration", sentence:""))
+        list.append(Word(word:"lobelia", sentence:""))
+        list.append(Word(word:"balustrades", sentence:""))
+        list.append(Word(word:"expiation", sentence:""))
+        list.append(Word(word:"flambeau", sentence:""))
     }
 }
