@@ -51,8 +51,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstWord = allWords.list[0].spellWord
-        readMe(myText: "Spell \(firstWord).")
+        readMe(myText: "Spell \(allWords.list[0].spellWord).")
         
         //Keep Recording Disabled for now
         startStopBtn.isEnabled = false
@@ -294,7 +293,7 @@ class ViewController: UIViewController {
         //if there are 14 questions, the number below should be 13 (always one less)
         if questionNumber <= totalNumberOfQuestions - 1 {
             //wordLabel.text = allWords.list[questionNumber].spellWord
-            readMe(myText: "Spoull" + allWords.list[questionNumber].spellWord)
+            readMe(myText: "Spell \(allWords.list[questionNumber].spellWord)")
             answerTxt.text = ""
         }
         else if markedQuestionsCount == 0 {
@@ -316,7 +315,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: when){
                 //spell next word
                 self.questionNumber = 0
-                self.readMe(myText: "Spoull" + self.markedQuestions[self.questionNumber].spellWord)
+                self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
                 self.answerTxt.text = ""
                 self.answerTxt.textColor = (UIColor.red)
             }
@@ -333,7 +332,7 @@ class ViewController: UIViewController {
         if questionNumber <= markedQuestionsCount - 1  {
             let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
-                self.readMe(myText: "Spoull" + self.markedQuestions[self.questionNumber].spellWord)
+                self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
             self.answerTxt.text = ""
             }
         }
