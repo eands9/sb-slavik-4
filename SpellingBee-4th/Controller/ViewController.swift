@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     
     var IsCorrect: Bool = true
     var isStartOver: Bool = false
+    var wrongAlready: Bool = false
     
     let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome"]
     let retryArray = ["Try again","Oooops"]
@@ -227,6 +228,7 @@ class ViewController: UIViewController {
             updateProgress()
             
             IsCorrect = false
+            wrongAlready = true
         }
     }
     
@@ -362,6 +364,19 @@ class ViewController: UIViewController {
         updateProgress()
     }
     
+    func showWord(){
+        if isTesting == true && wrongAlready == false {
+            answerTxt.text = allWords.list[questionNumber].spellWord.uppercased()
+            trackMarkedQuestions()
+        }
+        else if isTesting == true && wrongAlready == true{
+            answerTxt.text = allWords.list[questionNumber].spellWord.uppercased()
+        }
+        else {
+            answerTxt.text = markedQuestions[questionNumber].spellWord.uppercased()
+        }
+    }
+    
     @IBAction func nextSpellWord(_ sender: Any) {
         checkAnsBtn.isEnabled = true
         
@@ -421,16 +436,6 @@ class ViewController: UIViewController {
         else {
             let spellSentence = markedQuestions[questionNumber].fullSentence
             readMe(myText: spellSentence)
-        }
-    }
-    
-    func showWord(){
-        if isTesting == true {
-            answerTxt.text = allWords.list[questionNumber].spellWord.uppercased()
-            trackMarkedQuestions()
-        }
-        else {
-            answerTxt.text = markedQuestions[questionNumber].spellWord.uppercased()
         }
     }
     
