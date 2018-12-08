@@ -12,10 +12,6 @@ class WordBank{
     var list = [Word]()
     
     init(){
-        list.append(Word(word:"a", sentence:""))
-        list.append(Word(word:"b", sentence:""))
-        list.append(Word(word:"c", sentence:""))
-        /*
         list.append(Word(word:"mirror", sentence:"My mirror broke into tiny pieces."))
         list.append(Word(word:"resemble", sentence:"I resemble my mother."))
         list.append(Word(word:"citizen", sentence:"Citizens are everywhere in New York."))
@@ -55,6 +51,5 @@ class WordBank{
         list.append(Word(word:"anthem", sentence:"Using the national anthem as part of a comedy routine cheapens it."))
         list.append(Word(word:"rebuked", sentence:"It was unfair to punish him, but his rebuke still stung"))
         list.append(Word(word:"garret", sentence:"He should have gone up garret at once"))
- */
     }
 }
