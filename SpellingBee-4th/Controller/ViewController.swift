@@ -365,7 +365,14 @@ class ViewController: UIViewController {
     
     @IBAction func nextSpellWord(_ sender: Any) {
         checkAnsBtn.isEnabled = true
-        nextWordIsTesting()
+        
+        if isTesting == true {
+            nextWordIsTesting()
+        }
+        else {
+            nextWordIsReview()
+        }
+
     }
     
     func readMe( myText: String) {
@@ -408,13 +415,24 @@ class ViewController: UIViewController {
     }
     
     func readSentence(){
-        let spellSentence = allWords.list[questionNumber].fullSentence
-        readMe(myText: spellSentence)
+        if isTesting == true {
+            let spellSentence = allWords.list[questionNumber].fullSentence
+            readMe(myText: spellSentence)
+        }
+        else {
+            let spellSentence = markedQuestions[questionNumber].fullSentence
+            readMe(myText: spellSentence)
+        }
     }
     
     func showWord(){
-        answerTxt.text = allWords.list[questionNumber].spellWord.uppercased()
-        trackMarkedQuestions()
+        if isTesting == true {
+            answerTxt.text = allWords.list[questionNumber].spellWord.uppercased()
+            trackMarkedQuestions()
+        }
+        else {
+            answerTxt.text = markedQuestions[questionNumber].spellWord.uppercased()
+        }
     }
     
     func updateProgress(){
@@ -422,7 +440,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func repeatBtn(_ sender: Any) {
-        readMe(myText: allWords.list[questionNumber].spellWord)
+        if isTesting == true {
+            readMe(myText: allWords.list[questionNumber].spellWord)
+        }
+        else {
+            readMe(myText: markedQuestions[questionNumber].spellWord)
+        }
     }
 }
 
