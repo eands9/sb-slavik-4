@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var answerTxt: UITextField!
     @IBOutlet weak var progressLbl: UILabel!
     @IBOutlet weak var checkAnsBtn: UIButton!
+    @IBOutlet weak var repeatBtn: UIButton!
     
     var questionNumber: Int = 0
     var randomPick: Int = 0
@@ -418,6 +419,10 @@ class ViewController: UIViewController {
     
     func updateProgress(){
         progressLbl.text = "Correct/Attempt: \(correctAnswers) / \(numberAttempts)"
+    }
+    
+    @IBAction func repeatBtn(_ sender: Any) {
+        readMe(myText: allWords.list[questionNumber].spellWord)
     }
 }
 

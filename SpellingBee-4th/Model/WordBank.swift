@@ -12,22 +12,15 @@ class WordBank{
     var list = [Word]()
     
     init(){
-        list.append(Word(word:"solomon", sentence:""))
-        list.append(Word(word:"ambuscade", sentence:""))
-        list.append(Word(word:"execrations", sentence:""))
-        list.append(Word(word:"fuchsia", sentence:""))
-        list.append(Word(word:"proboscis", sentence:""))
-        list.append(Word(word:"exordium", sentence:""))
-        list.append(Word(word:"Leipzig", sentence:""))
-        list.append(Word(word:"phaeton", sentence:""))
-        list.append(Word(word:"marengo", sentence:""))
-        list.append(Word(word:"jacquerie", sentence:""))
-        list.append(Word(word:"beryllium", sentence:""))
-        list.append(Word(word:"ichor", sentence:""))
-        list.append(Word(word:"tergiversation", sentence:""))
-        list.append(Word(word:"mille-feuille", sentence:""))
-        list.append(Word(word:"auf wiedersehen", sentence:""))
+        list.append(Word(word:"prevaricate", sentence:""))
+        list.append(Word(word:"acclamations", sentence:""))
+        list.append(Word(word:"harlequin", sentence:""))
+        list.append(Word(word:"fascist", sentence:""))
+        list.append(Word(word:"savanna", sentence:""))
+        list.append(Word(word:"balaclavas", sentence:""))
+        list.append(Word(word:"courteous", sentence:""))
+        list.append(Word(word:"aphorism", sentence:""))
+        list.append(Word(word:"diffidence", sentence:""))
+        list.append(Word(word:"cinnabar", sentence:""))
     }
-    
-    
 }
