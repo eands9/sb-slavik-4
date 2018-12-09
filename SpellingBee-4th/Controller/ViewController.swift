@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressLbl: UILabel!
     @IBOutlet weak var checkAnsBtn: UIButton!
     @IBOutlet weak var repeatBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var showBtn: UIButton!
+    @IBOutlet weak var sentenceBtn: UIButton!
     
     var questionNumber: Int = 0
     var randomPick: Int = 0
@@ -40,14 +43,11 @@ class ViewController: UIViewController {
     // Speech to Text
     @IBOutlet weak var startStopBtn: UIButton!
     
-    
     private var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US")) //1
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private var audioEngine = AVAudioEngine()
     var lang: String = "en-US"
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,6 +189,7 @@ class ViewController: UIViewController {
     
     //text to speech
     @IBAction func checkBtn(_ sender: Any) {
+        disableAllBtn()
         if isTesting == true {
             checkBtnIsTesting()
         }
@@ -230,6 +231,7 @@ class ViewController: UIViewController {
             IsCorrect = false
             wrongAlready = true
         }
+        enableAllBtn()
     }
     
     func trackMarkedQuestions(){
@@ -260,18 +262,19 @@ class ViewController: UIViewController {
         }
             
         else{
-            
+            disableAllBtn()
             readMe(myText: "The correct answer is")
             answerTxt.textColor = (UIColor.red)
             answerTxt.text = correctAnswer
             
-            checkAnsBtn .isEnabled = false
-            let when = DispatchTime.now() + 3
+
+            let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
                 //next problem
                 self.nextWordIsReview()
             }
         }
+
     }
     
     func nextWordIsTesting(){
@@ -295,11 +298,11 @@ class ViewController: UIViewController {
         //if there are 14 questions, the number below should be 13 (always one less)
         if questionNumber <= totalNumberOfQuestions - 1 {
             //wordLabel.text = allWords.list[questionNumber].spellWord
-            readMe(myText: "Spell \(allWords.list[questionNumber].spellWord)")
+            readMe(myText: "Spell \(allWords.list[questionNumber].spellWord).")
             answerTxt.text = ""
         }
         else if markedQuestionsCount == 0 {
-            checkAnsBtn .isEnabled = false
+
             let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over again?", preferredStyle: .alert)
             
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
@@ -311,41 +314,36 @@ class ViewController: UIViewController {
         }
         else {
             isTesting = false
+            disableAllBtn()
             readMe(myText: "Let us review")
             
-            let when = DispatchTime.now() + 2
-            DispatchQueue.main.asyncAfter(deadline: when){
+            let when1 = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when1){
                 //spell next word
                 self.questionNumber = 0
-                //self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
-                self.readWord()
+                self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord).")
                 self.answerTxt.text = ""
                 self.answerTxt.textColor = (UIColor.red)
+                self.enableAllBtn()
             }
         }
-        
-        checkAnsBtn.isEnabled = true
-    }
-    
-    func readWord (){
-        readMe(myText: "Spell \(markedQuestions[questionNumber].spellWord)")
+        enableAllBtn()
     }
     
     func nextWordIsReview(){
         questionNumber += 1
         answerTxt.text = ""
-        //checkAnsBtn .isEnabled = true
-        
+        disableAllBtn()
         if questionNumber <= markedQuestionsCount - 1  {
             let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
-                //self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
-                self.readWord()
+                self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord).")
                 self.answerTxt.text = ""
+                self.enableAllBtn()
             }
         }
         else {
-            //chkAnsBtn .isEnabled = false
+
             let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over again?", preferredStyle: .alert)
             
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
@@ -355,8 +353,7 @@ class ViewController: UIViewController {
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
         }
-        
-        checkAnsBtn.isEnabled = true
+        enableAllBtn()
     }
     
     @IBAction func sentenceBtn(_ sender: Any) {
@@ -365,12 +362,12 @@ class ViewController: UIViewController {
     
     @IBAction func showWordBtn(_ sender: Any) {
         showWord()
-        checkAnsBtn.isEnabled = false
         numberAttempts += 1
         updateProgress()
     }
     
     func showWord(){
+        checkAnsBtn.isEnabled = false
         if isTesting == true && wrongAlready == false {
             answerTxt.text = allWords.list[questionNumber].spellWord.uppercased()
             trackMarkedQuestions()
@@ -384,15 +381,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextSpellWord(_ sender: Any) {
-        checkAnsBtn.isEnabled = true
-        
         if isTesting == true {
             nextWordIsTesting()
         }
         else {
             nextWordIsReview()
         }
-
     }
     
     func readMe( myText: String) {
@@ -403,13 +397,11 @@ class ViewController: UIViewController {
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
     }
-    
-
-    
     func startOver(){
         questionNumber = 0
         correctAnswers = 0
         numberAttempts = 0
+        updateProgress()
 
         markedQuestionsCount = 0
         markedQuestions = [Word]()
@@ -418,22 +410,16 @@ class ViewController: UIViewController {
         isStartOver = true
         answerTxt.textColor = (UIColor.black)
         nextWordIsTesting()
-        
-        
     }
-    
     func randomPositiveFeedback(){
         randomPick = Int(arc4random_uniform(8))
         checkAnsBtn.isEnabled = false
         readMe(myText: congratulateArray[randomPick])
-        
     }
-    
     func randomTryAgain(){
         randomPick = Int(arc4random_uniform(2))
         readMe(myText: retryArray[randomPick])
     }
-    
     func readSentence(){
         if isTesting == true {
             let spellSentence = allWords.list[questionNumber].fullSentence
@@ -456,6 +442,21 @@ class ViewController: UIViewController {
         else {
             readMe(myText: markedQuestions[questionNumber].spellWord)
         }
+    }
+    
+    func disableAllBtn(){
+        checkAnsBtn.isEnabled = false
+        repeatBtn.isEnabled = false
+        showBtn.isEnabled = false
+        sentenceBtn.isEnabled = false
+        nextBtn.isEnabled = false
+    }
+    func enableAllBtn(){
+        checkAnsBtn.isEnabled = true
+        repeatBtn.isEnabled = true
+        showBtn.isEnabled = true
+        sentenceBtn.isEnabled = true
+        nextBtn.isEnabled = true
     }
 }
 

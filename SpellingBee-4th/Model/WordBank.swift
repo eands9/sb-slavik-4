@@ -12,13 +12,10 @@ class WordBank{
     var list = [Word]()
     
     init(){
-        list.append(Word(word:"a", sentence:"My mirror broke into tiny pieces."))
-        list.append(Word(word:"b", sentence:"My mirror broke into tiny pieces."))
-        list.append(Word(word:"c", sentence:"My mirror broke into tiny pieces."))
-        /*
         list.append(Word(word:"mirror", sentence:"My mirror broke into tiny pieces."))
         list.append(Word(word:"resemble", sentence:"I resemble my mother."))
         list.append(Word(word:"citizen", sentence:"Citizens are everywhere in New York."))
+        /*
         list.append(Word(word:"pronounce", sentence:"My friend cannot pronounce the word rabbit."))
         list.append(Word(word:"taut", sentence:"Her taut muscles relaxed and she felt weak."))
         list.append(Word(word:"monopoly", sentence:"His friend likes the game monopoly."))

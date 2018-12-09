@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sb_4th_6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sb_4th_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,8 +152,11 @@
                     <connections>
                         <outlet property="answerTxt" destination="3dY-qP-HWD" id="olu-Bm-tSF"/>
                         <outlet property="checkAnsBtn" destination="CUt-V0-vM4" id="bnZ-Om-ZJf"/>
+                        <outlet property="nextBtn" destination="fvV-zX-tuJ" id="vSZ-Y1-1yr"/>
                         <outlet property="progressLbl" destination="hkb-wg-u1k" id="daE-QT-Gks"/>
                         <outlet property="repeatBtn" destination="aqq-qW-1an" id="J6k-VO-QAR"/>
+                        <outlet property="sentenceBtn" destination="xZs-T6-ipa" id="WFK-hA-Osn"/>
+                        <outlet property="showBtn" destination="lTL-VM-Iyi" id="1XR-tr-Ys8"/>
                         <outlet property="startStopBtn" destination="2Gs-fX-bFV" id="8rQ-dw-xQa"/>
                     </connections>
                 </viewController>
