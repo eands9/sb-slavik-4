@@ -317,13 +317,18 @@ class ViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: when){
                 //spell next word
                 self.questionNumber = 0
-                self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
+                //self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
+                self.readWord()
                 self.answerTxt.text = ""
                 self.answerTxt.textColor = (UIColor.red)
             }
         }
         
         checkAnsBtn.isEnabled = true
+    }
+    
+    func readWord (){
+        readMe(myText: "Spell \(markedQuestions[questionNumber].spellWord)")
     }
     
     func nextWordIsReview(){
@@ -334,8 +339,9 @@ class ViewController: UIViewController {
         if questionNumber <= markedQuestionsCount - 1  {
             let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
-                self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
-            self.answerTxt.text = ""
+                //self.readMe(myText: "Spell \(self.markedQuestions[self.questionNumber].spellWord)")
+                self.readWord()
+                self.answerTxt.text = ""
             }
         }
         else {
