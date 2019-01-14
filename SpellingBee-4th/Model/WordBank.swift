@@ -12,10 +12,14 @@ class WordBank{
     var list = [Word]()
     
     init(){
-        list.append(Word(word:"inane", sentence:""))
-        list.append(Word(word:"relevant", sentence:""))
-        list.append(Word(word:"impetuous", sentence:""))
-        list.append(Word(word:"ambivalent", sentence:""))
-        list.append(Word(word:"dejected", sentence:""))
+        list.append(Word(word:"gulag", sentence:""))
+        list.append(Word(word:"parka", sentence:""))
+        list.append(Word(word:"slav", sentence:""))
+        list.append(Word(word:"robot", sentence:""))
+        list.append(Word(word:"samovar", sentence:""))
+        list.append(Word(word:"kremlin", sentence:""))
+        list.append(Word(word:"troika", sentence:""))
+        list.append(Word(word:"slave", sentence:""))
+        list.append(Word(word:"mammoth", sentence:""))
     }
 }
