@@ -12,14 +12,15 @@ class WordBank{
     var list = [Word]()
     
     init(){
-        list.append(Word(word:"gulag", sentence:""))
-        list.append(Word(word:"parka", sentence:""))
-        list.append(Word(word:"slav", sentence:""))
-        list.append(Word(word:"robot", sentence:""))
-        list.append(Word(word:"samovar", sentence:""))
-        list.append(Word(word:"kremlin", sentence:""))
-        list.append(Word(word:"troika", sentence:""))
-        list.append(Word(word:"slave", sentence:""))
-        list.append(Word(word:"mammoth", sentence:""))
+        list.append(Word(word:"siberian", sentence:""))
+        list.append(Word(word:"tundra", sentence:""))
+        list.append(Word(word:"permian", sentence:""))
+        list.append(Word(word:"kishke", sentence:""))
+        list.append(Word(word:"glasnost", sentence:""))
+        list.append(Word(word:"paprika", sentence:""))
+        list.append(Word(word:"sable", sentence:""))
+        list.append(Word(word:"kasha", sentence:""))
+        list.append(Word(word:"nebbish", sentence:""))
+        list.append(Word(word:"polka", sentence:""))
     }
 }
