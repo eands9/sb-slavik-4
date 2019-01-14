@@ -12,15 +12,15 @@ class WordBank{
     var list = [Word]()
     
     init(){
-        list.append(Word(word:"bolshevik", sentence:""))
-        list.append(Word(word:"vampire", sentence:""))
-        list.append(Word(word:"sputnik", sentence:""))
-        list.append(Word(word:"knish", sentence:""))
-        list.append(Word(word:"cravat", sentence:""))
-        list.append(Word(word:"babushka", sentence:""))
-        list.append(Word(word:"soviet", sentence:""))
-        list.append(Word(word:"borzoi", sentence:""))
-        list.append(Word(word:"gopak", sentence:""))
-        list.append(Word(word:"cheka", sentence:""))
+        list.append(Word(word:"sevruga", sentence:""))
+        list.append(Word(word:"trepak", sentence:""))
+        list.append(Word(word:"babka", sentence:""))
+        list.append(Word(word:"purga", sentence:""))
+        list.append(Word(word:"baba", sentence:""))
+        list.append(Word(word:"cossack", sentence:""))
+        list.append(Word(word:"nelma", sentence:""))
+        list.append(Word(word:"kovsh", sentence:""))
+        list.append(Word(word:"lokshen", sentence:""))
+        list.append(Word(word:"feldsher", sentence:""))
     }
 }
